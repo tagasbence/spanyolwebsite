@@ -1,0 +1,38 @@
+.game {
+    width: 100%;
+    position: relative;
+    background: rgb(33, 37, 41);
+    color: white;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.game .scene {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.game .active {
+    display: flex;
+}
+
+.game button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: rgb(198, 11, 30);
+    color: white;
+    cursor: pointer;
+}
+
+canvas {
+    background: #d2b48c;
+    border: 6px solid white;
+    border-radius: 6px;
+}

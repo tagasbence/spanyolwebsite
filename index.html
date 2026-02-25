@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanyolország</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="game/style.css">
+</head>
+<body data-bs-theme="light">
+
+<header class="hero">
+    <video id="heroVideo" class="hero-video" autoplay muted playsinline>
+        <source src="video/kling3.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+        <h1 id="heroTitle">Spanyolország</h1>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Spain</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#fooldal">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="#latnivalok">Látnivalók</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gasztro">Gasztronómia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#kultura">Kultúra</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-5">
+
+    <section id="fooldal" class="mb-5">
+        <h2>Spanyolország röviden</h2>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Általános adatok</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>Főváros:</strong> Madrid</li>
+                            <li><strong>Népesség:</strong> ~47,4 millió</li>
+                            <li><strong>Hivatalos nyelv:</strong> Spanyol</li>
+                            <li><strong>Pénznem:</strong> Euro (EUR)</li>
+                            <li><strong>Terület:</strong> 505 990 km²</li>
+                            <li><strong>Kormányforma:</strong> Alkotmányos monarchia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Földrajzi elhelyezkedés</h5>
+                        <p class="card-text">
+                            Spanyolország a Pyrenei-félszigeten helyezkedik el, Európa délnyugati részén. 
+                            Az országot nyugatról az Atlanti-óceán, keletről a Földközi-tenger határolja. 
+                            Franciaországgal és Andorrával északkeleten, Portugáliával nyugaton határos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="latnivalok" class="mb-5">
+        <h2>Látnivalók</h2>
+        <div id="latnivalokcarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-sagrada">
+                                <img src="kepek/kep1.webp" class="card-img-top" alt="Sagrada Família" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sagrada Família</h5>
+                                    <p class="card-text">Antoni Gaudí mesterműve Barcelona szívében. Ez a világörökség részét képező bazilika 1882 óta épül...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-alhambra">
+                                <img src="kepek/kep2.jpg" class="card-img-top" alt="Alhambra" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Alhambra</h5>
+                                    <p class="card-text">Granada városában található ez a lenyűgöző maur palota- és erődrendszer...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-parkguell">
+                                <img src="kepek/kep3.jpg" class="card-img-top" alt="Park Güell" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Park Güell</h5>
+                                    <p class="card-text">Barcelona egyik legikonikusabb parkja, szintén Gaudí tervezte...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-plazamayor">
+                                <img src="kepek/kep4.jpg" class="card-img-top" alt="Plaza Mayor" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Plaza Mayor</h5>
+                                    <p class="card-text">Madrid főtere, amelyet 1617-ben építettek...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-barcelona">
+                                <img src="kepek/kep5.jpg" class="card-img-top" alt="Barcelona" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Barcelona</h5>
+                                    <p class="card-text">Katalónia fővárosa, Gaudi város...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-costadelsol">
+                                <img src="kepek/kep6.webp" class="card-img-top" alt="Costa del Sol" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Costa del Sol</h5>
+                                    <p class="card-text">A napfénypart - Andalúzia tengerparti része...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#latnivalokcarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#latnivalokcarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="gasztro" class="mb-5">
+        <h2>Gasztronómia</h2>
+        <div id="gasztronomiacarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-paella">
+                                <img src="kepek/kep7.webp" class="card-img-top" alt="Paella" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Paella</h5>
+                                    <p class="card-text">A leghíresebb spanyol étel, eredetileg Valenciából...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-tapas">
+                                <img src="kepek/kep8.jpg" class="card-img-top" alt="Tapas" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tapas</h5>
+                                    <p class="card-text">Kis ételek, amelyeket borozókban és bárokban szolgálnak fel...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-sangria">
+                                <img src="kepek/kep9.jpg" class="card-img-top" alt="Sangría" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sangría</h5>
+                                    <p class="card-text">Hagyományos spanyol ital vörösborból és gyümölcsökből...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-tortilla">
+                                <img src="kepek/kep10.webp" class="card-img-top" alt="Tortilla" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tortilla Española</h5>
+                                    <p class="card-text">Tojásos krumplilepény, spanyol klasszikus...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-paella">
+                                <img src="kepek/kep7.webp" class="card-img-top" alt="Paella" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Paella</h5>
+                                    <p class="card-text">A leghíresebb spanyol étel, eredetileg Valenciából...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-tapas">
+                                <img src="kepek/kep8.jpg" class="card-img-top" alt="Tapas" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tapas</h5>
+                                    <p class="card-text">Kis ételek, amelyeket borozókban és bárokban szolgálnak fel...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-sangria">
+                                <img src="kepek/kep9.jpg" class="card-img-top" alt="Sangría" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sangría</h5>
+                                    <p class="card-text">Hagyományos spanyol ital vörösborból és gyümölcsökből...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-tortilla">
+                                <img src="kepek/kep10.webp" class="card-img-top" alt="Tortilla" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tortilla Española</h5>
+                                    <p class="card-text">Tojásos krumplilepény, spanyol klasszikus...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#gasztronomiacarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gasztronomiacarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="kultura" class="mb-5">
+        <h2>Kultúra</h2>
+        <div id="kulturacarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-flamenco">
+                                <img src="kepek/kep11.jpg" class="card-img-top" alt="Flamenco" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Flamenco</h5>
+                                    <p class="card-text">Andalúzia szülötte, UNESCO szellemi örökség...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-tomatina">
+                                <img src="kepek/kep12.webp" class="card-img-top" alt="La Tomatina" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">La Tomatina</h5>
+                                    <p class="card-text">A világ legnagyobb paradicsom-háborúja Buñolban...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-sanfermin">
+                                <img src="kepek/kep13.jpg" class="card-img-top" alt="San Fermín" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">San Fermín - Bikafuttatás</h5>
+                                    <p class="card-text">Pamplona híres bikafuttatása júliusban...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 clickable-card" data-bs-toggle="modal" data-bs-target="#modal-sziesta">
+                                <img src="kepek/kep14.jpg" class="card-img-top" alt="Szieszta" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Szieszta</h5>
+                                    <p class="card-text">A hagyományos délutáni pihenés Spanyolországban...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#kulturacarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#kulturacarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="jatek" class="mb-5">
+        <h2>Játék</h2>
+
+
+        <div class="game">
+          <div class="scene active" id="startScene">
+            <h1>Bika Viadal (WIP)</h1>
+            <button id="startButton">Indítás</button>
+          </div>
+
+          <div class="scene" id="stageLoaderScene">
+            <h1 id="stageLoaderText"></h1>
+          </div>
+
+          <div class="scene" id="gameScene">
+            <canvas id="canvas" width="1000" height="1000"></canvas>
+          </div>
+
+          <div class="scene" id="endScene">
+            <h1 id="endText"></h1>
+            <button id="restartButton">Vissza a menübe</button>
+          </div>
+
+          <script src="game/game.js"></script>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+</main>
+
+<!-- MODALOK – mindegyikhez bővebb info -->
+
+<!-- Látnivalók modalok -->
+<div class="modal fade" id="modal-sagrada" tabindex="-1" aria-labelledby="modal-sagradaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-sagradaLabel">Sagrada Família</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Antoni Gaudí mesterműve, Barcelona ikonikus bazilikája. Építése 1882-ben kezdődött, és Gaudí 1926-os haláláig dolgozott rajta. A bazilika organikus formái, természeti motívumai és 18 tornya (12 apostol, 4 evangélista, Mária és a legmagasabb Jézus-torony 172,5 m) egyedülállóvá teszik.</p>
+        <p><strong>2026-ban</strong>: A Jézus Krisztus torony külső része február 20-án készült el a kereszttel – pontosan Gaudí halálának 100. évfordulójára. A teljes külső szerkezet kész, belső munkák 2027–2028-ig tartanak, a dicsőség homlokzat akár 2034-ig is eltarthat. UNESCO világörökség, évente ~5 millió látogató.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-alhambra" tabindex="-1" aria-labelledby="modal-alhambraLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-alhambraLabel">Alhambra</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Granada maur palota-erődítménye a Naszrida-dinasztia (1238–1492) idejéből. "Vörös kastély" (Al-Qal'a al-Hamra) néven ismert a vöröses falai miatt. Alcazaba erőd, Nasrid-paloták (Oroszlános udvar), Generalife kertek alkotják.</p>
+        <p>Az iszlám művészet csúcsa: geometrikus minták, arabeszkek, vízi játékok. Reconquista után (1492) katolikus királyok rezidenciája is volt. UNESCO világörökség, Spanyolország egyik leglátogatottabb helye.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-parkguell" tabindex="-1" aria-labelledby="modal-parkguellLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-parkguellLabel">Park Güell</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Gaudí 1900–1914 között tervezte Eusebi Güell megbízásából eredetileg lakópark céljára (60 ház), de csak kettő épült meg. 17 hektáros terület, monumentális zóna (12 ha) UNESCO világörökség.</p>
+        <p>Híres a mozaikos hullámos pad, a sárkányos lépcső, a Hypostyle terem (86 oszlop) és a természet ihlette formák. Gaudí háza ma múzeum. Barcelona egyik legnagyobb zöld területe.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-plazamayor" tabindex="-1" aria-labelledby="modal-plazamayorLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-plazamayorLabel">Plaza Mayor</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Madrid történelmi főtere, 1617–1619 között épült III. Fülöp uralkodása alatt Juan Gómez de Mora tervei alapján. Korábban Plaza del Arrabal piac volt.</p>
+        <p>Háromemeletes árkádos épületek veszik körül, központi III. Fülöp lovasszoborral. Korábban bikaviadalok, inkvizíciós kivégzések, ünnepségek helyszíne. Ma kávézók, éttermek és turista látványosság.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-barcelona" tabindex="-1" aria-labelledby="modal-barcelonaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-barcelonaLabel">Barcelona</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Katalónia fővárosa, Gaudí városaként ismert (Sagrada Família, Park Güell, Casa Batlló stb.). Modernista építészet központja, tengerparti metropolis.</p>
+        <p>A Sagrada Família befejezése 2026-ra (külsőleg) kulcsfontosságú évfordulót jelent Gaudí halálának 100. évében. Gazdag kultúra, tapas, strandok és éjszakai élet.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-costadelsol" tabindex="-1" aria-labelledby="modal-costadelsolLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-costadelsolLabel">Costa del Sol</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>"Napfény part" – Andalúzia déli tengerpartja Málaga tartományban, ~150 km hosszan (Nerja-tól La Línea de la Concepción-ig). Több mint 320 napos napsütés évente.</p>
+        <p>Híres strandok, golfpályák, Marbella luxusa, Malaga kultúrája. Turizmus központja, fehér falvak a hegyekben. Ideális nyaralóhely.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Gasztronómia modalok -->
+<div class="modal fade" id="modal-paella" tabindex="-1" aria-labelledby="modal-paellaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-paellaLabel">Paella</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Valencia hagyományos étele, rizsből, sáfrányból, nyúlból/csirkéből, zöldbabbal, babbal és csigával készül (paella valenciana). Eredetileg paraszti étel a rizsföldeken dolgozóknak.</p>
+        <p>Nagy paellera serpenyőben nyílt tűzön főzik, a "socarrat" (alján pirult rizs) a legjobb része. Nem tartalmaz chorizót vagy tenger gyümölcseit a klasszikus verzióban!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-tapas" tabindex="-1" aria-labelledby="modal-tapasLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-tapasLabel">Tapas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Kis adagok ételből, borozókban szolgálják fel. Eredete: pohár borra "tapa" (fedő) került, pl. sonka vagy sajt, hogy ne menjen bele por.</p>
+        <p>Szociális élmény: barátokkal fogyasztva, beszélgetve. Klasszikusok: tortilla, patatas bravas, jamón ibérico, gambas al ajillo. Spanyol életmód része.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-sangria" tabindex="-1" aria-labelledby="modal-sangriaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-sangriaLabel">Sangría</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Vörösbor alapú frissítő ital gyümölcsökkel (narancs, citrom, alma), cukorral, néha brandyvel. Neve a "sangre" (vér) szóból jön a színe miatt.</p>
+        <p>Római idők óta létezik hasonló (bor + fűszerek), modern verzió 19. századi Spanyolországból. Nyári sláger, tinto de verano (bor + citromos üdítő) a spanyol kedvenc.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-tortilla" tabindex="-1" aria-labelledby="modal-tortillaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-tortillaLabel">Tortilla Española</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tojás + burgonya (esetleg hagyma) olívaolajban sült vastag omlett. Spanyol nemzeti étel, reggelire, uzsonnára, vacsorára is tökéletes.</p>
+        <p>Változatok: hagymával/nélkül, chorizóval (nem autentikus), de klasszikusan egyszerű. Hidegen/melegen is finom, tapas bárokban kötelező.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kultúra modalok -->
+<div class="modal fade" id="modal-flamenco" tabindex="-1" aria-labelledby="modal-flamencoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-flamencoLabel">Flamenco</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Andalúziai tánc, ének és gitárzene keveréke. Érzelmek kifejezése: fájdalom (duende), szenvedély, öröm. Roma, arab, zsidó és keresztény gyökerekkel.</p>
+        <p>UNESCO szellemi örökség. Tablao-kban élőben népszerű, híres énekesek: Camarón de la Isla, Paco de Lucía.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-tomatina" tabindex="-1" aria-labelledby="modal-tomatinaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-tomatinaLabel">La Tomatina</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Buñol városában augusztus utolsó szerdáján tartott paradicsom-harc. Több mint 100 tonna paradicsom repül órákon át.</p>
+        <p>1945 óta tart, ma világfesztivál. Védőszemüveg, fehér ruha ajánlott – utána tűzoltókocsi mossa le az utcákat!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-sanfermin" tabindex="-1" aria-labelledby="modal-sanferminLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-sanferminLabel">San Fermín - Bikafuttatás</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Pamplonában július 6–14. között tartott fesztivál, híres az encierro bikafuttatással (reggel 8-kor indulnak a bikák az utcákon az arénáig).</p>
+        <p>Hemingway tette világhírűvé. Vallási ünnep Szent Fermín tiszteletére, de extrém veszélyes – sérülések gyakoriak.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-sziesta" tabindex="-1" aria-labelledby="modal-sziestaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-sziestaLabel">Szieszta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Hagyományos délutáni pihenés (kb. 14–17 óra), ebéd után alvás vagy lazítás. Az üzletek zárva vannak sok helyen.</p>
+        <p>A meleg mediterrán éghajlat miatt alakult ki, ma már kevésbé általános nagyvárosokban, de vidéken és nyáron még él.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-white text-center p-3">
+    <p>Készítette: Tegzes Bence, Bódóg Bence, Varjas Csaba | SZISZKI | 2026</p>
+</footer>
+
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

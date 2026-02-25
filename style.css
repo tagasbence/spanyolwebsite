@@ -1,0 +1,167 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+header {
+    background: linear-gradient(135deg, #c60b1e 0%, #ffc400 100%) !important;
+    color: white;
+    padding: 2rem !important;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+
+section {
+    padding-top: 2rem;
+}
+
+section h2 {
+    color: #c60b1e;
+    border-bottom: 3px solid #ffc400;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    color: #c60b1e;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+section {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+
+#latnivalok .card:first-child .card-title {
+    font-size: 1.2rem;
+}
+
+
+#gasztro .card {
+    background: linear-gradient(to bottom, #fff 0%, #fff9e6 100%);
+    border-left: 4px solid #ffc400;
+}
+
+
+#kultura .card {
+    background: linear-gradient(to bottom, #fff 0%, #ffe6e6 100%);
+    border-left: 4px solid #c60b1e;
+}
+
+
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%) !important;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.col-md-4:nth-child(1) .card, .col-md-3:nth-child(1) .card, .col-md-6:nth-child(1) .card { animation-delay: 0.1s; }
+.col-md-4:nth-child(2) .card, .col-md-3:nth-child(2) .card, .col-md-6:nth-child(2) .card { animation-delay: 0.2s; }
+.col-md-4:nth-child(3) .card, .col-md-3:nth-child(3) .card { animation-delay: 0.3s; }
+.col-md-4:nth-child(4) .card { animation-delay: 0.4s; }
+.col-md-4:nth-child(5) .card { animation-delay: 0.5s; }
+.col-md-4:nth-child(6) .card { animation-delay: 0.6s; }
+
+
+.list-unstyled li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-unstyled li:last-child {
+    border-bottom: none;
+}
+
+.list-unstyled strong {
+    color: #c60b1e;
+    min-width: 120px;
+    display: inline-block;
+}

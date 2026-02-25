@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <div class="game">
+        <div class="scene active" id="startScene">
+            <h1>Top 1 Game OAT</h2>
+            <button id="startButton">Start</button>
+        </div>
+
+        <div class="scene" id="stageLoaderScene">
+            <h1 id="stageLoaderText"></h2>
+        </div>
+
+        <div class="scene" id="gameScene">
+            <canvas id="canvas" width="1000" height="1000"></canvas>
+        </div>
+
+        <div class="scene" id="endScene">
+            <h1 id="endText"></h2>
+            <button id="restartButton">Play Again</button>
+        </div>
+
+        <script src="game.js"></script>
+    </div>
+</body>
+</html>

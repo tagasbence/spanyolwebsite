@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 10px;
 }
 
 .game .active {
@@ -35,4 +36,51 @@ canvas {
     background: #d2b48c;
     border: 6px solid white;
     border-radius: 6px;
+}
+
+#difficultySelector {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    border: solid 2px rgb(198, 11, 30);
+    border-radius: 8px;
+}
+
+#difficultySelector > button {
+    background-color: rgba(198, 11, 30, 0) !important;
+    transition: 0.3s;
+    padding: 7px 10px !important;
+}
+#difficultySelector > button:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#difficultySelector > button:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#difficultySelector > button:hover {
+    background-color: rgba(198, 11, 30, 0.5) !important;
+}
+
+#difficulties > * {
+    height: 100%;
+    margin: 0;
+}
+#difficultyText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    padding: 0 10px;
+    cursor: default;
+}
+
+#stageLoaderText {
+    font-weight: 600;
+    font-size: 50px;
 }

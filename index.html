@@ -32,6 +32,7 @@
                 <li class="nav-item"><a class="nav-link" href="#latnivalok">Látnivalók</a></li>
                 <li class="nav-item"><a class="nav-link" href="#gasztro">Gasztronómia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#kultura">Kultúra</a></li>
+                <li class="nav-item"><a class="nav-link" href="#jatek">Játék</a></li>
             </ul>
         </div>
     </div>
@@ -316,6 +317,11 @@
         <div class="game">
           <div class="scene active" id="startScene">
             <h1>Bika Viadal (WIP)</h1>
+            <div id="difficultySelector">
+              <button onclick="AddDifficulty(-1)">&lt;</button>
+              <div id="difficultyText"></div>
+              <button onclick="AddDifficulty(1)">&gt;</button>
+            </div>
             <button id="startButton">Indítás</button>
           </div>
 

@@ -3,6 +3,7 @@ const canvas = canvasBase.getContext("2d");
 canvas.font = "600 40px Arial";
 
 const startScene = document.getElementById("startScene");
+const difficultyText = document.getElementById("difficultyText");
 const stageLoaderScene = document.getElementById("stageLoaderScene");
 const stageLoaderText = document.getElementById("stageLoaderText");
 const gameScene = document.getElementById("gameScene");
@@ -12,6 +13,11 @@ const endText = document.getElementById("endText");
 document.getElementById("startButton").onclick = NextStage;
 document.getElementById("restartButton").onclick = ShowStart;
 
+const difficulties = [
+    document.getElementById("difficulty-0"),
+    document.getElementById("difficulty-1"),
+    document.getElementById("difficulty-2")
+]
 
 let BULL_COUNT;
 let PLAYER_SPEED;
@@ -28,6 +34,7 @@ let running = false;
 let lastTime = 0;
 let dodges;
 let stage = 0;
+let difficulty = 1;
 
 function OnResize() {
     const gameWindow = document.getElementsByClassName("game")[0];
@@ -70,7 +77,7 @@ function NextStage() {
         3,
         3,
         3
-    ][stage - 1];
+    ][stage - 1] - 1 + difficulty;
     PLAYER_SPEED = [
         0.4,
         0.4,
@@ -294,4 +301,19 @@ function PlayerCollidingWithBull(bull) {
     return distX * distX + distY * distY <= player.r * player.r;
 }
 
+function AddDifficulty(modifier) {
+    difficulty += modifier;
+    if(difficulty < 0)
+        difficulty = 0;
+    if(difficulty > 2)
+        difficulty = 2;
+
+    difficultyText.innerText = [
+        "Könnyű",
+        "Közepes",
+        "Nehéz"
+    ][difficulty];
+}
+
 OnResize();
+AddDifficulty(0);

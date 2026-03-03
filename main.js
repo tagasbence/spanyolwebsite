@@ -18,12 +18,8 @@ const lightModeButton = document.getElementById("lightMode");
 function ToggleLightmode() {
     lightMode = !lightMode;
     console.log(`lightmode: ${lightMode}`);
-    if(lightMode) {
-        lightModeButton.classList.add("lightModeState-light");
-        lightModeButton.classList.remove("lightModeState-dark");
-    }
-    else {
-        lightModeButton.classList.remove("lightModeState-light");
-        lightModeButton.classList.add("lightModeState-dark");
-    }
+    if(lightMode)
+        document.body.classList.remove("darkMode");
+    else
+        document.body.classList.add("darkMode");
 }

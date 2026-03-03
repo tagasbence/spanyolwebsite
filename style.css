@@ -1,9 +1,12 @@
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
     min-height: 100vh;
     background-attachment: fixed;
+}
+
+body.darkMode {
+    background: #111 !important;
 }
 
 header {
@@ -22,6 +25,9 @@ header h1 {
 .navbar {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
+.darkMode .navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+}
 
 .navbar-brand {
     font-weight: bold;
@@ -39,9 +45,12 @@ header h1 {
     border-radius: 5px;
 }
 
-
 section {
     padding-top: 2rem;
+}
+.darkMode section {
+    background-color: rgb(40, 40, 40);
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 15px 0px !important;
 }
 
 section h2 {
@@ -50,6 +59,9 @@ section h2 {
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
+}
+.darkMode section h2 {
+    color: #ee4858;
 }
 
 
@@ -60,10 +72,17 @@ section h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: white;
 }
+.darkMode .card {
+    background-color: rgb(50, 50, 50);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 6px 0px;
+}
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+.darkMode .card:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
 }
 
 .card-title {
@@ -71,10 +90,20 @@ section h2 {
     font-weight: bold;
     margin-bottom: 1rem;
 }
+.darkMode .card-title {
+    color: #ee4858;
+}
 
 .card-text {
     color: #555;
     line-height: 1.6;
+}
+.darkMode .card-text {
+    color: #eee;
+}
+
+.darkMode .list-unstyled li {
+    color: #eee;
 }
 
 
@@ -97,10 +126,18 @@ section {
     background: linear-gradient(to bottom, #fff 0%, #fff9e6 100%);
     border-left: 4px solid #ffc400;
 }
+.darkMode #gasztro .card {
+    background: linear-gradient(to bottom, #473606 0%, #4d3a06 100%);
+    border-left: 4px solid #ffc400;
+}
 
 
 #kultura .card {
     background: linear-gradient(to bottom, #fff 0%, #ffe6e6 100%);
+    border-left: 4px solid #c60b1e;
+}
+.darkMode #kultura .card {
+    background: linear-gradient(to bottom, #521f1f 0%, #582222 100%);
     border-left: 4px solid #c60b1e;
 }
 
@@ -155,6 +192,9 @@ footer p {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
 }
+.darkMode .list-unstyled li {
+    border-bottom: 1px solid #555;
+}
 
 .list-unstyled li:last-child {
     border-bottom: none;
@@ -164,4 +204,35 @@ footer p {
     color: #c60b1e;
     min-width: 120px;
     display: inline-block;
+}
+.darkMode .list-unstyled strong {
+    color: #ee4858;
+}
+
+
+.darkMode .modal-content {
+    background: #222;
+    color: #eee;
+}
+.darkMode .btn-close {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+.darkMode .modal-footer .btn {
+    background: #555;
+    border-color: #555;
+}
+.darkMode .modal-footer .btn:hover {
+    background: #434343;
+    border-color: #434343;
+}
+
+#lightMode {
+    aspect-ratio: 1;
+    height: 100%;
+    background-image: url("kepek/dark-mode.png");
+    background-size: cover;
+    opacity: 0.55;
+}
+.darkMode #lightMode {
+    background-image: url("kepek/light-mode.png");
 }

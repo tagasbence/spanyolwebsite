@@ -35,6 +35,7 @@ let lastTime = 0;
 let dodges;
 let stage = 0;
 let difficulty = 1;
+let dashTimer = 0;
 
 function OnResize() {
     const gameWindow = document.getElementsByClassName("game")[0];
@@ -143,6 +144,7 @@ function StartGame() {
     running = true;
     lastTime = performance.now();
     dodges = 0;
+    dashTimer = 0;
     requestAnimationFrame(UpdateLoop);
 }
 function ShowEnd(text) {
@@ -176,10 +178,23 @@ function Update(deltaTime) {
     if (keys["a"] || keys["ArrowLeft"]) moveX -= 1;
     if (keys["d"] || keys["ArrowRight"]) moveX += 1;
 
+    dashTimer -= deltaTime / 6;
+
     const len = Math.sqrt(moveX * moveX + moveY * moveY);
     if (len > 0) {
-        player.x += moveX / len * PLAYER_SPEED * deltaTime;
-        player.y += moveY / len * PLAYER_SPEED * deltaTime;
+        const dirX = moveX / len;
+        const dirY = moveY / len;
+        player.x += dirX * PLAYER_SPEED * deltaTime;
+        player.y += dirY * PLAYER_SPEED * deltaTime;
+        if(keys["Shift"] && dashTimer <= 0) {
+            keys["Shift"] = false;
+            player.x += dirX * 0.3;
+            player.y += dirY * 0.3;
+            dashTimer = 1;
+            console.log("dashed");
+        }
+        console.log("moved");
+        
         const r = player.r + 0.04;
         player.x = Math.min(WPH - r, Math.max(r, player.x));
         player.y = Math.min(1 - r, Math.max(r, player.y));
@@ -286,6 +301,16 @@ function Render() {
     const text = `${dodges}/${DODGES_TO_WIN}`;
     const m = canvas.measureText(text);
     canvas.fillText(text, canvasBase.width - m.width - 10,(m.fontBoundingBoxAscent + m.fontBoundingBoxDescent) / 2 + 20);
+
+    if(dashTimer > 0) {
+        canvas.strokeStyle = "#3050ff";
+        canvas.lineWidth = 5;
+        canvas.lineCap = "round";
+        canvas.beginPath();
+        canvas.moveTo(canvasBase.width * (0.5 - dashTimer * 0.2), canvasBase.height - 10);
+        canvas.lineTo(canvasBase.width * (0.5 + dashTimer * 0.2), canvasBase.height - 10)
+        canvas.stroke();
+    }
 }
 
 function PlayerCollidingWithBull(bull) {

@@ -233,3 +233,25 @@ footer p {
 .darkMode #lightMode {
     background-image: url("kepek/light-mode.png");
 }
+
+#helpScene > h2 {
+    color: white;
+    border: none;
+    font-weight: 500;
+    margin: 0;
+}
+#helpScene > p {
+    width: 50%;
+    min-width: 200px;
+    text-align: justify;
+}
+#helpScene > p {
+    font-size: 20px;
+}
+
+#helpScene > table > tbody > tr:not(:last-child) {
+    border-bottom: 1px white solid;
+}
+#helpScene th {
+    padding: 3px 10px;
+}

@@ -12,7 +12,7 @@ video.addEventListener("ended", () => {
     video.pause();
 });
 
-let lightMode = true;
+let lightMode = document.cookie != "dark";
 const lightModeButton = document.getElementById("lightMode");
 
 function ToggleLightmode() {
@@ -22,4 +22,9 @@ function ToggleLightmode() {
         document.body.classList.remove("darkMode");
     else
         document.body.classList.add("darkMode");
+
+    document.cookie = lightMode ? "light" : "dark";
 }
+
+if(!lightMode)
+    document.body.classList.add("darkMode");

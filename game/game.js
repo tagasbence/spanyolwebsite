@@ -1,6 +1,5 @@
 const canvasBase = document.getElementById("canvas");
 const canvas = canvasBase.getContext("2d");
-canvas.font = "600 40px Arial";
 
 const startScene = document.getElementById("startScene");
 const difficultyText = document.getElementById("difficultyText");
@@ -268,6 +267,7 @@ function Render() {
         canvas.restore();
     }
 
+    canvas.font = "600 40px Arial";
     canvas.fillStyle = "white";
     const text = `${dodges}/${DODGES_TO_WIN}`;
     const m = canvas.measureText(text);

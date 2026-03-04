@@ -325,12 +325,36 @@
               <button onclick="AddDifficulty(1)">&gt;</button>
             </div>
             <button id="startButton">Indítás</button>
+            <button id="helpButton" onclick="ShowHelp();">Segítség</button>
           </div>
 
           <div class="scene" id="helpScene">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h1>Hogyan kell játszani?</h1>
+            <p>A célja a játéknak, hogy a játékos (a piros kör) kikerülje a bikákat. A játék 5 szintből áll, mindegyik szint egyre nehezebb. Válaszd ki a nehézséget és nyomj a <b>Indítás</b> gombra!</p>
+
+            <h2>Irányítás</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <th>W / ↑</th>
+                  <th>Fel</th>
+                </tr>
+                <tr>
+                  <th>A / ←</th>
+                  <th>Balra</th>
+                </tr>
+                <tr>
+                  <th>S / ↓</th>
+                  <th>Le</th>
+                </tr>
+                <tr>
+                  <th>D / →</th>
+                  <th>Jobbra</th>
+                </tr>
+              </tbody>
+            </table>
+
+            <button id="helpButton" onclick="ShowStart();">Vissza a menübe</button>
           </div>
 
           <div class="scene" id="stageLoaderScene">

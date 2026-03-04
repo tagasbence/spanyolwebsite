@@ -1,7 +1,10 @@
+console.log(navigator.platform);
+
 const canvasBase = document.getElementById("canvas");
 const canvas = canvasBase.getContext("2d");
 
 const startScene = document.getElementById("startScene");
+const helpScene = document.getElementById("helpScene");
 const difficultyText = document.getElementById("difficultyText");
 const stageLoaderScene = document.getElementById("stageLoaderScene");
 const stageLoaderText = document.getElementById("stageLoaderText");
@@ -52,17 +55,27 @@ document.addEventListener("keyup", e => keys[e.key] = false);
 
 function ShowStart() {
     startScene.classList.add("active");
+    helpScene.classList.remove("active");
     stageLoaderScene.classList.remove("active");
     gameScene.classList.remove("active");
     endScene.classList.remove("active");
     running = false;
     stage = 0;
 }
+function ShowHelp() {
+    startScene.classList.remove("active");
+    helpScene.classList.add("active");
+    stageLoaderScene.classList.remove("active");
+    gameScene.classList.remove("active");
+    endScene.classList.remove("active");
+    running = false;
+}
 function NextStage() {
     if(stage == 5)
         ShowEnd("Nyertél!");
 
     startScene.classList.remove("active");
+    helpScene.classList.remove("active");
     stageLoaderScene.classList.add("active");
     gameScene.classList.remove("active");
     endScene.classList.remove("active");
@@ -104,6 +117,7 @@ function NextStage() {
 }
 function StartGame() {
     startScene.classList.remove("active");
+    helpScene.classList.remove("active");
     stageLoaderScene.classList.remove("active");
     gameScene.classList.add("active");
     endScene.classList.remove("active");
@@ -135,6 +149,7 @@ function StartGame() {
 }
 function ShowEnd(text) {
     startScene.classList.remove("active");
+    helpScene.classList.remove("active");
     stageLoaderScene.classList.remove("active");
     gameScene.classList.remove("active");
     endScene.classList.add("active");
@@ -267,7 +282,7 @@ function Render() {
         canvas.restore();
     }
 
-    canvas.font = "600 40px Arial";
+    canvas.font = "600 40px Segoe UI";
     canvas.fillStyle = "white";
     const text = `${dodges}/${DODGES_TO_WIN}`;
     const m = canvas.measureText(text);

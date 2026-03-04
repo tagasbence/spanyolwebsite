@@ -233,9 +233,10 @@ function Update(deltaTime) {
                     bull.x = insideRingX;
                     bull.y = insideRingY;
                     dodges += 1;
-                    if (dodges >= DODGES_TO_WIN)
+                    if (dodges >= DODGES_TO_WIN) {
                         NextStage();
-                        //ShowEnd("Win");
+                        return;
+                    }
                 }
                 else {
                     bull.x = prevX;

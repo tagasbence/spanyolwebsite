@@ -1,5 +1,3 @@
-console.log(navigator.platform);
-
 const canvasBase = document.getElementById("canvas");
 const canvas = canvasBase.getContext("2d");
 

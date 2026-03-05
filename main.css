@@ -9,6 +9,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  padding: 0 !important;
 }
 
 .hero-video {
@@ -29,10 +30,25 @@
 }
 
 #heroTitle {
-    font-size: 10rem;
-    opacity: 0;
-    transform:translateY(50px);
-    transition: all 1.5s ease;
+    font-size: 10vw;
+    opacity: 1;
+    transform:translateY(0px);
+    animation: heroAnim 2s ease-out;
+}
+
+@keyframes heroAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    30% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .clickable-card {

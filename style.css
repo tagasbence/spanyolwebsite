@@ -12,7 +12,6 @@ body.darkMode {
 header {
     background: linear-gradient(135deg, #c60b1e 0%, #ffc400 100%) !important;
     color: white;
-    padding: 2rem !important;
 }
 
 header h1 {

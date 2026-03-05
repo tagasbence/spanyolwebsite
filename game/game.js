@@ -103,14 +103,17 @@ function NextStage() {
         0.7,
         0.75
     ][stage - 1];
-    DODGES_TO_WIN = [
+        DODGES_TO_WIN = [
         10,
         10,
         15,
         20,
         30
     ][stage - 1];
-    //DODGES_TO_WIN = 100000;
+    if(difficulty == 1)
+        DODGES_TO_WIN += 5;
+    if(difficulty == 2)
+        DODGES_TO_WIN += 10;
 
     setTimeout(StartGame, 1000);
 }
@@ -178,7 +181,7 @@ function Update(deltaTime) {
     if (keys["a"] || keys["ArrowLeft"]) moveX -= 1;
     if (keys["d"] || keys["ArrowRight"]) moveX += 1;
 
-    dashTimer -= deltaTime / 6;
+    dashTimer -= deltaTime / 10;
 
     const len = Math.sqrt(moveX * moveX + moveY * moveY);
     if (len > 0) {
@@ -204,10 +207,7 @@ function Update(deltaTime) {
         if(PlayerCollidingWithBull(bull))
             ShowEnd("Vesztettél!");
 
-        //const prevTimeToMove = bull.timeToMove;
         bull.timeToMove -= deltaTime;
-        //if(prevTimeToMove >= 0 && bull.timeToMove < 0)
-        //    bull.angle = Math.atan2(player.y - bull.y, player.x - bull.x);
         if(bull.timeToMove > 0) {
             const playerAngle = Math.atan2(player.y - bull.y, player.x - bull.x);
             const deltas = [
@@ -223,9 +223,6 @@ function Update(deltaTime) {
             if (Math.abs(smallestDeltaAngle) < 0.0001)
                 continue;
 
-            //const maxAngleChange = deltaTime * 3; // 1 is rotation speed
-            //const angleChangeMagnitude = Math.min(Math.abs(smallestDeltaAngle * deltaTime), maxAngleChange);
-            //bull.angle += (smallestDeltaAngle < 0 ? -1 : 1) * angleChangeMagnitude;
             if(deltaTime * 4.5 < Math.abs(smallestDeltaAngle))
                 bull.angle += (smallestDeltaAngle < 0 ? -1 : 1) * deltaTime * 4.5;
             else
@@ -303,7 +300,7 @@ function Render() {
     canvas.fillText(text, canvasBase.width - m.width - 10,(m.fontBoundingBoxAscent + m.fontBoundingBoxDescent) / 2 + 20);
 
     if(dashTimer > 0) {
-        canvas.strokeStyle = "#3050ff";
+        canvas.strokeStyle = "#ff4040";
         canvas.lineWidth = 5;
         canvas.lineCap = "round";
         canvas.beginPath();

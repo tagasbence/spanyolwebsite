@@ -28,3 +28,21 @@ function ToggleLightmode() {
 
 if(!lightMode)
     document.body.classList.add("darkMode");
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (window.innerWidth >= 768) {
+    const carousels = document.querySelectorAll(".carousel");
+
+    carousels.forEach(function(carouselElement) {
+      new bootstrap.Carousel(carouselElement, {
+        interval: 5000,
+        ride: "carousel"
+      });
+    });
+  }
+
+});
+
+

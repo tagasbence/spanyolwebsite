@@ -49,8 +49,12 @@ function OnResize() {
 
 window.addEventListener('resize', OnResize);
 
-document.addEventListener("keydown", e => keys[e.key] = true);
-document.addEventListener("keyup", e => keys[e.key] = false);
+document.addEventListener("keydown", e => keys[e.key.toLowerCase()] = true);
+document.addEventListener("keyup", e => {
+    const k = e.key.toLowerCase();
+    if(keys.hasOwnProperty(k))
+        delete keys[k];
+});
 
 function ShowStart() {
     startScene.classList.add("active");
@@ -189,8 +193,8 @@ function Update(deltaTime) {
         const dirY = moveY / len;
         player.x += dirX * PLAYER_SPEED * deltaTime;
         player.y += dirY * PLAYER_SPEED * deltaTime;
-        if(keys["Shift"] && dashTimer <= 0) {
-            keys["Shift"] = false;
+        if(keys["shift"] && dashTimer <= 0) {
+            keys["shift"] = false;
             player.x += dirX * 0.3;
             player.y += dirY * 0.3;
             dashTimer = 1;

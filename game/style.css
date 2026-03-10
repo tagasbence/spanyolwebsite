@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
     #jatek {
         display: none;
     };
@@ -6,7 +6,7 @@
     #navbarNav > ul > li:nth-child(5) {
         display: none;
     }
-}
+}*/
 
 .game {
     width: 100%;
